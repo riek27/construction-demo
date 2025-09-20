@@ -29,7 +29,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--steel-gray);
             overflow-x: hidden;
         }
@@ -38,59 +38,71 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
             color: var(--charcoal-black);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
         }
 
         h1 {
             font-size: 3.5rem;
+            line-height: 1.2;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
             position: relative;
+            line-height: 1.3;
         }
 
         h2:after {
             content: '';
             display: block;
-            width: 80px;
-            height: 4px;
+            width: 100px;
+            height: 5px;
             background: var(--construction-orange);
-            margin: 0.5rem auto;
+            margin: 1rem auto;
+            border-radius: 3px;
         }
 
         h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.2rem;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
         }
 
         p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
+            font-size: 1.15rem;
+            line-height: 1.8;
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 32px;
+            padding: 16px 36px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             transition: all 0.3s ease;
             cursor: pointer;
             text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
         }
 
         .btn-primary {
@@ -100,7 +112,7 @@
         }
 
         .btn-primary:hover {
-            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
             transform: translateY(-3px);
         }
 
@@ -158,11 +170,11 @@
             background-color: var(--construction-orange);
             color: var(--white);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
         }
 
         section {
-            padding: 5rem 0;
+            padding: 6rem 0;
         }
 
         .text-center {
@@ -182,7 +194,7 @@
         }
 
         header.scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.97);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
@@ -200,12 +212,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 0;
+            padding: 1.5rem 0;
         }
 
         .logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--white);
             text-decoration: none;
@@ -219,16 +231,16 @@
         }
 
         .logo-img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+            width: 45px;
+            height: 45px;
+            margin-right: 12px;
             background: var(--construction-orange);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 20px;
+            font-size: 22px;
         }
 
         nav ul {
@@ -237,24 +249,27 @@
         }
 
         nav ul li {
-            margin-left: 2rem;
+            margin-left: 2.2rem;
             position: relative;
+            flex: 1;
+            text-align: center;
         }
 
         nav ul li a {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             transition: color 0.3s ease;
-            padding: 8px 0;
+            padding: 10px 0;
+            display: block;
         }
 
         nav ul li a:after {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
+            height: 3px;
             bottom: 0;
             left: 0;
             background-color: var(--construction-orange);
@@ -273,15 +288,15 @@
             display: none;
             background: transparent;
             border: none;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--white);
             cursor: pointer;
         }
 
-        /* Hero Section with Parallax */
+        /* Hero Section */
         .hero {
             height: 100vh;
-            min-height: 700px;
+            min-height: 800px;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
             background-attachment: fixed;
             display: flex;
@@ -293,140 +308,39 @@
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
             position: relative;
             z-index: 2;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
+            font-size: 4.5rem;
+            margin-bottom: 1.8rem;
             color: var(--white);
             line-height: 1.2;
-        }
-
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid var(--construction-orange);
-            white-space: nowrap;
-            margin: 0 auto;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--construction-orange) }
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.6rem;
+            margin-bottom: 3rem;
             color: var(--concrete-light-gray);
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        /* Floating Elements Animation */
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .floating-element {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-            background: rgba(249, 115, 22, 0.15);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .floating-element:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 60%;
-            left: 80%;
-            animation-delay: 1s;
-            background: rgba(30, 58, 138, 0.15);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .floating-element:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            top: 40%;
-            left: 75%;
-            animation-delay: 2s;
-            background: rgba(250, 204, 21, 0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .floating-element:nth-child(4) {
-            width: 70px;
-            height: 70px;
-            top: 70%;
-            left: 15%;
-            animation-delay: 3s;
-            background: rgba(55, 65, 81, 0.15);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .floating-element:nth-child(5) {
-            width: 90px;
-            height: 90px;
-            top: 25%;
-            left: 65%;
-            animation-delay: 4s;
-            background: rgba(229, 231, 235, 0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            }
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-                box-shadow: 0 25px 15px rgba(0, 0, 0, 0.1);
-            }
-            100% {
-                transform: translateY(0) rotate(0deg);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            }
-        }
-
-        /* About Section with Counters */
+        /* About Section */
         .about {
             background-color: var(--white);
             position: relative;
@@ -435,14 +349,14 @@
         .about-container {
             display: flex;
             align-items: center;
-            gap: 4rem;
+            gap: 5rem;
         }
 
         .about-image {
             flex: 1;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
             transform: translateZ(0);
         }
 
@@ -465,67 +379,80 @@
             display: inline-block;
             background: linear-gradient(135deg, var(--construction-orange), #E55D0C);
             color: var(--white);
-            padding: 12px 24px;
-            border-radius: 5px;
+            padding: 14px 28px;
+            border-radius: 6px;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
+            font-size: 1.1rem;
         }
 
         .values-list {
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .value-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
-            padding: 15px;
-            border-radius: 8px;
+            margin-bottom: 2rem;
+            padding: 20px;
+            border-radius: 10px;
             transition: all 0.3s ease;
+            background: rgba(249, 115, 22, 0.03);
         }
 
         .value-item:hover {
-            background-color: rgba(249, 115, 22, 0.05);
+            background-color: rgba(249, 115, 22, 0.07);
             transform: translateX(5px);
         }
 
         .value-icon {
             color: var(--construction-orange);
-            font-size: 1.8rem;
-            margin-right: 1rem;
+            font-size: 2rem;
+            margin-right: 1.5rem;
             flex-shrink: 0;
-            background: rgba(249, 115, 22, 0.1);
-            width: 50px;
-            height: 50px;
+            background: rgba(249, 115, 22, 0.12);
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
         }
 
+        .value-content h4 {
+            margin-bottom: 0.8rem;
+        }
+
+        .value-content p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+        }
+
         .stats-container {
             display: flex;
             justify-content: space-around;
-            margin-top: 3rem;
+            margin-top: 4rem;
             text-align: center;
             flex-wrap: wrap;
         }
 
         .stat-item {
-            padding: 20px;
+            padding: 25px;
         }
 
         .counter {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
             color: var(--construction-orange);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            line-height: 1;
         }
 
         .stat-label {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--steel-gray);
+            font-weight: 500;
         }
 
         /* Services Section */
@@ -536,15 +463,15 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
             background: var(--white);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
             position: relative;
@@ -565,8 +492,8 @@
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.18);
             color: var(--white);
         }
 
@@ -582,7 +509,7 @@
         }
 
         .service-image {
-            height: 200px;
+            height: 220px;
             overflow: hidden;
             position: relative;
         }
@@ -604,14 +531,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(30, 58, 138, 0.8);
+            background: rgba(30, 58, 138, 0.85);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             opacity: 0;
             transition: opacity 0.3s ease;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
         }
 
@@ -621,49 +548,66 @@
 
         .service-overlay p {
             color: var(--white);
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 0;
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--construction-orange);
-            margin: 1.5rem 0 1rem;
+            margin: 2rem 0 1.5rem;
             transition: color 0.3s ease;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.7rem;
+            margin-bottom: 1.2rem;
             transition: color 0.3s ease;
+            padding: 0 1.5rem;
         }
 
         .service-card p {
-            padding: 0 1.5rem 1.5rem;
+            padding: 0 2rem 2rem;
             transition: color 0.3s ease;
+            font-size: 1.1rem;
         }
 
-        /* Projects Section with Filtering */
+        .service-card .btn {
+            margin-bottom: 2rem;
+        }
+
+        /* Projects Section */
         .projects {
             position: relative;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-intro p {
+            font-size: 1.25rem;
         }
 
         .project-filters {
             display: flex;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             flex-wrap: wrap;
         }
 
         .filter-btn {
-            padding: 8px 20px;
-            margin: 5px;
+            padding: 10px 25px;
+            margin: 8px;
             background: var(--concrete-light-gray);
             border: none;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .filter-btn.active, .filter-btn:hover {
@@ -673,17 +617,16 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
         .project-card {
             position: relative;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            height: 250px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            height: 280px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
             cursor: pointer;
         }
 
@@ -704,12 +647,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(30, 58, 138, 0.9), transparent);
+            background: linear-gradient(to top, rgba(30, 58, 138, 0.92), transparent);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: flex-start;
-            padding: 20px;
+            padding: 25px;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -720,15 +663,15 @@
 
         .project-title {
             color: var(--white);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.7rem;
+            margin-bottom: 0.8rem;
             transform: translateY(20px);
             transition: transform 0.3s ease;
         }
 
         .project-desc {
             color: var(--concrete-light-gray);
-            font-size: 1rem;
+            font-size: 1.1rem;
             transform: translateY(20px);
             transition: transform 0.3s ease 0.1s;
         }
@@ -746,12 +689,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.95);
             z-index: 1100;
             overflow: auto;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 30px;
         }
 
         .modal-content {
@@ -759,24 +702,24 @@
             max-height: 80%;
             margin: auto;
             display: block;
-            border-radius: 10px;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
 
         .modal-details {
             background: var(--white);
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 12px;
         }
 
         .modal-close {
             position: absolute;
-            top: 20px;
-            right: 30px;
+            top: 25px;
+            right: 35px;
             color: var(--white);
-            font-size: 40px;
+            font-size: 45px;
             cursor: pointer;
             transition: color 0.3s ease;
         }
@@ -785,7 +728,7 @@
             color: var(--construction-orange);
         }
 
-        /* Testimonials Carousel */
+        /* Testimonials Section */
         .testimonials {
             background: linear-gradient(to right, var(--navy-blue), #2D4BA8);
             color: var(--white);
@@ -802,7 +745,7 @@
 
         .testimonial-slider {
             position: relative;
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
             overflow: hidden;
         }
@@ -814,13 +757,13 @@
 
         .testimonial-card {
             flex: 0 0 100%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            margin: 0 15px;
-            min-height: 350px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            margin: 0 20px;
+            min-height: 380px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -829,66 +772,68 @@
         .testimonial-header {
             display: flex;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .testimonial-img {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: 1rem;
+            margin-right: 1.5rem;
             border: 3px solid var(--construction-orange);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
 
         .testimonial-rating {
             color: var(--golden-yellow);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            font-size: 1.15rem;
         }
 
         .testimonial-author {
             font-weight: 700;
             color: var(--white);
+            font-size: 1.3rem;
         }
 
         .testimonial-role {
             color: var(--concrete-light-gray);
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .testimonial-nav {
             display: flex;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .testimonial-dot {
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            margin: 0 5px;
+            background: rgba(255, 255, 255, 0.35);
+            margin: 0 8px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .testimonial-dot.active {
             background: var(--construction-orange);
-            transform: scale(1.2);
+            transform: scale(1.3);
         }
 
         /* Contact Section */
         .contact-container {
             display: flex;
-            gap: 4rem;
+            gap: 5rem;
         }
 
         .contact-form {
@@ -896,75 +841,88 @@
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             position: relative;
         }
 
         .form-label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
             color: var(--charcoal-black);
+            font-size: 1.1rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 15px;
+            padding: 18px;
             border: 1px solid var(--cool-gray);
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--construction-orange);
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.15);
         }
 
         textarea.form-control {
-            min-height: 150px;
+            min-height: 180px;
             resize: vertical;
         }
 
         .contact-info {
             flex: 1;
             background: linear-gradient(135deg, var(--navy-blue), #2D4BA8);
-            padding: 2.5rem;
-            border-radius: 10px;
+            padding: 3rem;
+            border-radius: 12px;
             color: var(--white);
         }
 
         .info-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
         }
 
         .info-icon {
             color: var(--construction-orange);
-            font-size: 1.5rem;
-            margin-right: 1rem;
+            font-size: 1.7rem;
+            margin-right: 1.5rem;
             flex-shrink: 0;
-            background: rgba(255, 255, 255, 0.1);
-            width: 40px;
-            height: 40px;
+            background: rgba(255, 255, 255, 0.12);
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
         }
 
+        .info-content h3 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-content p {
+            margin-bottom: 0;
+            color: var(--concrete-light-gray);
+        }
+
         .map-container {
-            margin-top: 3rem;
-            border-radius: 10px;
+            margin-top: 3.5rem;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
         }
 
         .map-container iframe {
             width: 100%;
-            height: 300px;
+            height: 320px;
             border: none;
             display: block;
         }
@@ -973,13 +931,13 @@
         .newsletter {
             background: linear-gradient(135deg, var(--construction-orange), #E55D0C);
             color: var(--white);
-            padding: 4rem 0;
+            padding: 5rem 0;
             text-align: center;
         }
 
         .newsletter h2 {
             color: var(--white);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .newsletter h2:after {
@@ -987,45 +945,47 @@
         }
 
         .newsletter p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto 3rem;
+            font-size: 1.3rem;
         }
 
         .newsletter-form {
             display: flex;
-            max-width: 500px;
+            max-width: 550px;
             margin: 0 auto;
             position: relative;
         }
 
         .newsletter-input {
             flex: 1;
-            padding: 15px 20px;
+            padding: 18px 25px;
             border: none;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             width: 100%;
+            font-family: 'Inter', sans-serif;
         }
 
         .newsletter-input:focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
         }
 
         .newsletter-btn {
             position: absolute;
-            right: 5px;
-            top: 5px;
+            right: 6px;
+            top: 6px;
             background-color: var(--navy-blue);
             color: var(--white);
             border: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
             transition: background-color 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .newsletter-btn:hover {
@@ -1035,30 +995,30 @@
         /* Sticky Contact Button */
         .sticky-contact {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             z-index: 999;
             display: none;
         }
 
         .sticky-contact-btn {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--construction-orange), #E55D0C);
             color: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-size: 1.7rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
             transition: all 0.3s ease;
             animation: pulse 2s infinite;
         }
 
         .sticky-contact-btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
         }
 
         @keyframes pulse {
@@ -1066,7 +1026,7 @@
                 box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
             }
             70% {
-                box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+                box-shadow: 0 0 0 12px rgba(249, 115, 22, 0);
             }
             100% {
                 box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
@@ -1077,21 +1037,21 @@
         footer {
             background-color: var(--charcoal-black);
             color: var(--concrete-light-gray);
-            padding: 4rem 0 2rem;
+            padding: 5rem 0 2.5rem;
         }
 
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 3.5rem;
         }
 
         .footer-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--white);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             display: block;
         }
 
@@ -1100,24 +1060,25 @@
         }
 
         .footer-about p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
         .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .social-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.12);
             border-radius: 50%;
             color: var(--white);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             transition: all 0.3s ease;
         }
 
@@ -1128,10 +1089,10 @@
 
         .footer-heading {
             color: var(--white);
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
             position: relative;
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.8rem;
         }
 
         .footer-heading:after {
@@ -1139,8 +1100,8 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
-            height: 3px;
+            width: 45px;
+            height: 4px;
             background-color: var(--construction-orange);
         }
 
@@ -1149,7 +1110,7 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .footer-links a {
@@ -1159,17 +1120,18 @@
             position: relative;
             padding-left: 0;
             transition: all 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .footer-links a:hover {
             color: var(--construction-orange);
-            padding-left: 10px;
+            padding-left: 12px;
         }
 
         .footer-links a:before {
             content: '→';
             position: absolute;
-            left: -15px;
+            left: -18px;
             opacity: 0;
             transition: all 0.3s ease;
         }
@@ -1179,41 +1141,74 @@
             opacity: 1;
         }
 
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-contact i {
+            margin-right: 12px;
+            color: var(--construction-orange);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
         .footer-bottom {
             text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+
         @media (max-width: 992px) {
             h1 {
                 font-size: 3rem;
             }
             
             h2 {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
             
             .about-container,
             .contact-container {
                 flex-direction: column;
-                gap: 3rem;
+                gap: 4rem;
             }
             
             .hero h1 {
-                font-size: 3.2rem;
+                font-size: 3.5rem;
             }
 
             .testimonial-card {
-                min-height: 400px;
+                min-height: 420px;
+            }
+
+            .hero {
+                min-height: 700px;
             }
         }
 
         @media (max-width: 768px) {
             .header-container {
-                padding: 1rem 0;
+                padding: 1.2rem 0;
             }
             
             nav ul {
@@ -1224,8 +1219,8 @@
                 width: 100%;
                 background-color: var(--white);
                 flex-direction: column;
-                padding: 1rem 0;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                padding: 1.5rem 0;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             }
             
             nav ul.active {
@@ -1235,12 +1230,14 @@
             nav ul li {
                 margin: 0;
                 text-align: center;
+                flex: none;
             }
             
             nav ul li a {
                 display: block;
-                padding: 1rem;
+                padding: 1.2rem;
                 color: var(--charcoal-black);
+                font-size: 1.2rem;
             }
             
             .mobile-nav-toggle {
@@ -1248,24 +1245,25 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
             
             .hero-buttons {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.2rem;
             }
             
             .btn {
                 width: 100%;
+                padding: 16px 30px;
             }
             
             section {
-                padding: 4rem 0;
+                padding: 5rem 0;
             }
             
             .newsletter-form {
@@ -1274,14 +1272,14 @@
             
             .newsletter-input {
                 border-radius: 50px;
-                margin-bottom: 0.5rem;
-                padding-right: 15px;
+                margin-bottom: 0.8rem;
+                padding-right: 20px;
             }
             
             .newsletter-btn {
                 position: relative;
                 border-radius: 50px;
-                padding: 12px;
+                padding: 14px;
                 width: 100%;
                 right: 0;
                 top: 0;
@@ -1292,7 +1290,7 @@
             }
 
             .testimonial-card {
-                min-height: 450px;
+                min-height: 460px;
             }
 
             .services-grid {
@@ -1305,11 +1303,15 @@
 
             .stats-container {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.5rem;
             }
 
-            .floating-element {
-                display: none;
+            .service-card h3 {
+                font-size: 1.6rem;
+            }
+
+            .service-card p {
+                font-size: 1.1rem;
             }
         }
 
@@ -1323,7 +1325,7 @@
             }
             
             h3 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
             
             .hero {
@@ -1331,19 +1333,33 @@
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
             }
             
             .project-title {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
 
             .counter {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .testimonial-card {
                 min-height: 500px;
+                padding: 2rem;
+            }
+
+            .contact-info {
+                padding: 2rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
         }
 
@@ -1365,22 +1381,23 @@
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 25px;
             font-weight: 500;
+            font-size: 1.1rem;
         }
 
         /* Form validation */
         .form-control.error {
             border-color: #ff3860;
-            box-shadow: 0 0 0 2px rgba(255, 56, 96, 0.2);
+            box-shadow: 0 0 0 3px rgba(255, 56, 96, 0.2);
         }
 
         .error-message {
             color: #ff3860;
-            font-size: 0.9rem;
-            margin-top: 5px;
+            font-size: 1rem;
+            margin-top: 8px;
         }
     </style>
 </head>
@@ -1413,16 +1430,9 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
         <div class="hero-content">
-            <h1>Building with <span class="typewriter">Strength, Precision & Trust</span></h1>
-            <p>Your trusted partner for construction excellence for over 15 years</p>
+            <h1>Building with Strength, Precision & Trust</h1>
+            <p>Your trusted partner for construction excellence for over 15 years. We deliver quality craftsmanship on every project, big or small.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary">Request a Free Quote</a>
                 <a href="tel:+1234567890" class="btn btn-secondary">Call Now</a>
@@ -1446,21 +1456,21 @@
                     <div class="values-list">
                         <div class="value-item">
                             <div class="value-icon"><i class="fas fa-hard-hat"></i></div>
-                            <div>
+                            <div class="value-content">
                                 <h4>Safety First</h4>
                                 <p>We prioritize safety on every project, ensuring protection for our team and your property.</p>
                             </div>
                         </div>
                         <div class="value-item">
                             <div class="value-icon"><i class="fas fa-award"></i></div>
-                            <div>
+                            <div class="value-content">
                                 <h4>Quality Craftsmanship</h4>
                                 <p>We take pride in our attention to detail and commitment to superior results.</p>
                             </div>
                         </div>
                         <div class="value-item">
                             <div class="value-icon"><i class="fas fa-handshake"></i></div>
-                            <div>
+                            <div class="value-content">
                                 <h4>Integrity & Trust</h4>
                                 <p>We build relationships based on honesty, transparency, and reliability.</p>
                             </div>
@@ -1498,72 +1508,72 @@
                     <div class="service-image">
                         <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="General Contracting">
                         <div class="service-overlay">
-                            <p>End-to-end project management from planning to completion</p>
+                            <p>End-to-end project management from planning to completion with quality assurance at every step.</p>
                         </div>
                     </div>
                     <div class="service-icon"><i class="fas fa-tools"></i></div>
                     <h3>General Contracting</h3>
-                    <p>Full-service contracting from planning to completion, ensuring quality and timely delivery.</p>
+                    <p>Full-service contracting from planning to completion, ensuring quality and timely delivery for all types of construction projects.</p>
                     <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="https://images.unsplash.com/photo-1591822059941-5d9732490a8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Roofing">
                         <div class="service-overlay">
-                            <p>Professional installation, repair, and maintenance for all roof types</p>
+                            <p>Professional installation, repair, and maintenance for all roof types with long-lasting results.</p>
                         </div>
                     </div>
                     <div class="service-icon"><i class="fas fa-home"></i></div>
                     <h3>Roofing</h3>
-                    <p>Professional roofing services including installation, repair, and maintenance for all roof types.</p>
+                    <p>Professional roofing services including installation, repair, and maintenance for all roof types with premium materials.</p>
                     <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="https://images.unsplash.com/photo-1628595579535-28c68eefc90e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Masonry">
                         <div class="service-overlay">
-                            <p>Expert brick, stone, and concrete work for durable and beautiful results</p>
+                            <p>Expert brick, stone, and concrete work for durable and beautiful results that stand the test of time.</p>
                         </div>
                     </div>
                     <div class="service-icon"><i class="fas fa-border-style"></i></div>
                     <h3>Masonry</h3>
-                    <p>Expert masonry work including brick, stone, and concrete for durable and beautiful results.</p>
+                    <p>Expert masonry work including brick, stone, and concrete for durable and beautiful results that enhance any property.</p>
                     <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Remodeling">
                         <div class="service-overlay">
-                            <p>Transform your space with expert remodeling services for homes and businesses</p>
+                            <p>Transform your space with expert remodeling services for homes and businesses that maximize functionality.</p>
                         </div>
                     </div>
                     <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
                     <h3>Remodeling</h3>
-                    <p>Transform your space with our expert remodeling services for homes and businesses.</p>
+                    <p>Transform your space with our expert remodeling services for homes and businesses, creating functional and beautiful environments.</p>
                     <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="https://images.unsplash.com/photo-1602817538386-50e1e9dfc5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Concrete Work">
                         <div class="service-overlay">
-                            <p>Professional concrete services including pouring, finishing, and repair</p>
+                            <p>Professional concrete services including pouring, finishing, and repair with precision and durability.</p>
                         </div>
                     </div>
                     <div class="service-icon"><i class="fas fa-building"></i></div>
                     <h3>Concrete Work</h3>
-                    <p>Professional concrete services including pouring, finishing, and repair for any project.</p>
+                    <p>Professional concrete services including pouring, finishing, and repair for any project, ensuring strength and durability.</p>
                     <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Commercial Projects">
                         <div class="service-overlay">
-                            <p>Complete commercial construction services for offices, retail spaces, and more</p>
+                            <p>Complete commercial construction services for offices, retail spaces, and more with expert project management.</p>
                         </div>
                     </div>
                     <div class="service-icon"><i class="fas fa-industry"></i></div>
                     <h3>Commercial Projects</h3>
-                    <p>Complete commercial construction services for offices, retail spaces, and more.</p>
+                    <p>Complete commercial construction services for offices, retail spaces, and more, delivered on time and within budget.</p>
                     <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
@@ -1574,7 +1584,9 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2>Our Projects</h2>
-            <p class="text-center">Take a look at some of our completed projects that showcase our quality and expertise</p>
+            <div class="section-intro">
+                <p>Take a look at some of our completed projects that showcase our quality craftsmanship and attention to detail in every aspect of construction.</p>
+            </div>
             
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -1588,42 +1600,42 @@
                     <img src="https://images.unsplash.com/photo-1613490493576-7fde63ac8114?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern Office Building" class="project-img">
                     <div class="project-overlay">
                         <h3 class="project-title">Modern Office Complex</h3>
-                        <p class="project-desc">Commercial construction with innovative design elements</p>
+                        <p class="project-desc">Commercial construction with innovative design elements and sustainable features</p>
                     </div>
                 </div>
                 <div class="project-card fade-in" data-category="residential">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Luxury Home" class="project-img">
                     <div class="project-overlay">
                         <h3 class="project-title">Luxury Residence</h3>
-                        <p class="project-desc">Custom-built home with premium finishes</p>
+                        <p class="project-desc">Custom-built home with premium finishes and attention to detail</p>
                     </div>
                 </div>
                 <div class="project-card fade-in" data-category="renovation">
                     <img src="https://images.unsplash.com/photo-1628744404730-5e143358539b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Kitchen Remodel" class="project-img">
                     <div class="project-overlay">
                         <h3 class="project-title">Kitchen Renovation</h3>
-                        <p class="project-desc">Complete kitchen remodel with custom cabinetry</p>
+                        <p class="project-desc">Complete kitchen remodel with custom cabinetry and high-end appliances</p>
                     </div>
                 </div>
                 <div class="project-card fade-in" data-category="residential">
                     <img src="https://images.unsplash.com/photo-1620371350506-4a963522dc1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Concrete Patio" class="project-img">
                     <div class="project-overlay">
                         <h3 class="project-title">Outdoor Living Space</h3>
-                        <p class="project-desc">Custom concrete patio with finishing touches</p>
+                        <p class="project-desc">Custom concrete patio with finishing touches for outdoor entertainment</p>
                     </div>
                 </div>
                 <div class="project-card fade-in" data-category="renovation">
                     <img src="https://images.unsplash.com/photo-1515574838751-8c0911f48b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Bathroom Remodel" class="project-img">
                     <div class="project-overlay">
                         <h3 class="project-title">Bathroom Remodel</h3>
-                        <p class="project-desc">Luxury bathroom renovation with premium fixtures</p>
+                        <p class="project-desc">Luxury bathroom renovation with premium fixtures and spa-like features</p>
                     </div>
                 </div>
                 <div class="project-card fade-in" data-category="commercial">
                     <img src="https://images.unsplash.com/photo-1581985673473-1c8eb4b5ddc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Roofing Project" class="project-img">
                     <div class="project-overlay">
                         <h3 class="project-title">Commercial Roofing</h3>
-                        <p class="project-desc">Durable roofing solution for retail space</p>
+                        <p class="project-desc">Durable roofing solution for retail space with long-term warranty</p>
                     </div>
                 </div>
             </div>
@@ -1666,7 +1678,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"Your Company transformed our outdated kitchen into a modern masterpiece. Their attention to detail and professionalism made the process smooth and stress-free. Highly recommend!"</p>
+                        <p class="testimonial-text">"Your Company transformed our outdated kitchen into a modern masterpiece. Their attention to detail and professionalism made the process smooth and stress-free. The team was always punctual, clean, and respectful of our home. Highly recommend!"</p>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-header">
@@ -1683,7 +1695,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"We hired Your Company for our office expansion, and they delivered beyond our expectations. The project was completed on time and within budget. Will definitely work with them again."</p>
+                        <p class="testimonial-text">"We hired Your Company for our office expansion, and they delivered beyond our expectations. The project was completed on time and within budget, which is rare in construction. Will definitely work with them again for our future projects."</p>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-header">
@@ -1700,7 +1712,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        <p class="testimonial-text">"I've worked with many construction companies, but Your Company stands out for their quality work and reliability. They're my go-to for all my development projects."</p>
+                        <p class="testimonial-text">"I've worked with many construction companies, but Your Company stands out for their quality work and reliability. They're my go-to for all my development projects. Their team is professional, skilled, and they always deliver on their promises."</p>
                     </div>
                 </div>
                 <div class="testimonial-nav">
@@ -1716,9 +1728,9 @@
     <section class="newsletter">
         <div class="container">
             <h2>Subscribe to Our Newsletter</h2>
-            <p>Stay updated with our latest projects, tips, and special offers</p>
+            <p>Stay updated with our latest projects, construction tips, and exclusive special offers delivered directly to your inbox.</p>
             <form class="newsletter-form" id="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
                 <button type="submit" class="newsletter-btn">Subscribe</button>
             </form>
             <div class="thank-you-message" id="newsletter-thank-you">Thank you for subscribing to our newsletter!</div>
@@ -1759,28 +1771,28 @@
                 <div class="contact-info">
                     <div class="info-item">
                         <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
+                        <div class="info-content">
                             <h3>Address</h3>
                             <p>123 Construction Avenue, Buildersville, BC 12345</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon"><i class="fas fa-phone"></i></div>
-                        <div>
+                        <div class="info-content">
                             <h3>Phone</h3>
                             <p>(123) 456-7890</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                        <div>
+                        <div class="info-content">
                             <h3>Email</h3>
                             <p>info@yourcompany.com</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon"><i class="fas fa-clock"></i></div>
-                        <div>
+                        <div class="info-content">
                             <h3>Business Hours</h3>
                             <p>Monday-Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
                         </div>
@@ -1806,7 +1818,7 @@
             <div class="footer-container">
                 <div class="footer-about">
                     <a href="#" class="footer-logo">Your <span>Company</span></a>
-                    <p>Providing quality construction services for over 15 years. We build with strength, precision, and trust.</p>
+                    <p>Providing quality construction services for over 15 years. We build with strength, precision, and trust, ensuring client satisfaction on every project.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -1832,7 +1844,7 @@
                         <li><a href="#services">Roofing</a></li>
                         <li><a href="#services">Masonry</a></li>
                         <li><a href="#services">Remodeling</a></li>
-                        <li><a href="#services">Concrete Work</a></li>
+                        <li><a href#services">Concrete Work</a></li>
                         <li><a href="#services">Commercial Projects</a></li>
                     </ul>
                 </div>
@@ -1896,7 +1908,7 @@
                     }
                     
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
                 }
@@ -1918,42 +1930,42 @@
         const projectData = {
             0: {
                 title: "Modern Office Complex",
-                description: "A state-of-the-art office building designed for productivity and comfort with sustainable materials and energy-efficient systems.",
+                description: "A state-of-the-art office building designed for productivity and comfort with sustainable materials and energy-efficient systems. This project featured open-plan workspaces, conference rooms, and breakout areas with premium finishes throughout.",
                 type: "Commercial",
                 date: "June 2023",
                 client: "Tech Solutions Inc."
             },
             1: {
                 title: "Luxury Residence",
-                description: "A custom-built luxury home featuring premium finishes, smart home technology, and expansive outdoor living spaces.",
+                description: "A custom-built luxury home featuring premium finishes, smart home technology, and expansive outdoor living spaces. The project included custom cabinetry, hardwood flooring, and energy-efficient windows throughout.",
                 type: "Residential",
                 date: "March 2023",
                 client: "The Johnson Family"
             },
             2: {
                 title: "Kitchen Renovation",
-                description: "Complete kitchen transformation with custom cabinetry, quartz countertops, and high-end appliances for a modern cooking experience.",
+                description: "Complete kitchen transformation with custom cabinetry, quartz countertops, and high-end appliances for a modern cooking experience. The redesign improved workflow and added significant value to the property.",
                 type: "Renovation",
                 date: "January 2023",
                 client: "Sarah Williams"
             },
             3: {
                 title: "Outdoor Living Space",
-                description: "Beautifully designed outdoor area with stamped concrete patio, built-in seating, and a custom fire pit for year-round enjoyment.",
+                description: "Beautifully designed outdoor area with stamped concrete patio, built-in seating, and a custom fire pit for year-round enjoyment. The space includes lighting and landscaping for evening entertainment.",
                 type: "Residential",
                 date: "August 2022",
                 client: "Michael Roberts"
             },
             4: {
                 title: "Bathroom Remodel",
-                description: "Luxury bathroom renovation with spa-like features including a freestanding tub, rainfall shower, and custom vanity.",
+                description: "Luxury bathroom renovation with spa-like features including a freestanding tub, rainfall shower, and custom vanity. Heated flooring and premium fixtures create a luxurious retreat within the home.",
                 type: "Renovation",
                 date: "November 2022",
                 client: "Lisa Thompson"
             },
             5: {
                 title: "Commercial Roofing",
-                description: "Durable commercial roofing solution for a retail space with a 20-year warranty and energy-efficient insulation.",
+                description: "Durable commercial roofing solution for a retail space with a 20-year warranty and energy-efficient insulation. The project was completed with minimal disruption to business operations.",
                 type: "Commercial",
                 date: "May 2022",
                 client: "City Mall Developments"
@@ -2038,7 +2050,7 @@
         setInterval(() => {
             currentIndex = (currentIndex + 1) % dots.length;
             moveToSlide(currentIndex);
-        }, 5000);
+        }, 6000);
 
         // Form validation
         const contactForm = document.getElementById('contact-form');
