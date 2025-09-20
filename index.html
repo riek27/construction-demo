@@ -3,776 +3,1885 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your trusted construction partner with over 15 years of experience in residential and commercial projects. Quality craftsmanship, licensed and insured.">
-    <title>BuildMaster - Construction Experts</title>
-    
-    <!-- Preconnect to external domains for faster loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://images.unsplash.com">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" as="style">
-    
-    <!-- TailwindCSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1e3a8a',
-                        secondary: '#f97316',
-                        'secondary-hover': '#fb923c',
-                        dark: '#0f172a',
-                        light: '#f3f4f6',
-                        card: '#ffffff',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'Poppins', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
-                    },
-                }
+    <title>Your Company - Construction Experts</title>
+    <meta name="description" content="Professional construction services with 15+ years of experience. Specializing in commercial and residential projects with quality craftsmanship.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy-blue: #1E3A8A;
+            --construction-orange: #F97316;
+            --steel-gray: #374151;
+            --golden-yellow: #FACC15;
+            --concrete-light-gray: #E5E7EB;
+            --charcoal-black: #111827;
+            --white: #FFFFFF;
+            --cool-gray: #9CA3AF;
+            --slate: #64748B;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--steel-gray);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--charcoal-black);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--construction-orange);
+            margin: 0.5rem auto;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--construction-orange), #E55D0C);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .btn-primary:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-primary:hover:after {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-secondary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--white);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-secondary:hover {
+            color: var(--construction-orange);
+        }
+
+        .btn-secondary:hover:before {
+            width: 100%;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--construction-orange);
+            border: 2px solid var(--construction-orange);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--construction-orange);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: transparent;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header.scrolled .logo,
+        header.scrolled nav ul li a {
+            color: var(--charcoal-black);
+        }
+
+        header.scrolled .btn-primary {
+            background: linear-gradient(135deg, var(--construction-orange), #E55D0C);
+            color: var(--white);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--construction-orange);
+            margin-left: 4px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            background: var(--construction-orange);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            padding: 8px 0;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--construction-orange);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: var(--construction-orange);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        /* Hero Section with Parallax */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--construction-orange);
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--construction-orange) }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            color: var(--concrete-light-gray);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Floating Elements Animation */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            background: rgba(249, 115, 22, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floating-element:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 1s;
+            background: rgba(30, 58, 138, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floating-element:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 75%;
+            animation-delay: 2s;
+            background: rgba(250, 204, 21, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floating-element:nth-child(4) {
+            width: 70px;
+            height: 70px;
+            top: 70%;
+            left: 15%;
+            animation-delay: 3s;
+            background: rgba(55, 65, 81, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floating-element:nth-child(5) {
+            width: 90px;
+            height: 90px;
+            top: 25%;
+            left: 65%;
+            animation-delay: 4s;
+            background: rgba(229, 231, 235, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+                box-shadow: 0 25px 15px rgba(0, 0, 0, 0.1);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             }
         }
-    </script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #f97316;
-            --secondary-hover: #fb923c;
-            --dark: #0f172a;
-            --light: #f3f4f6;
+
+        /* About Section with Counters */
+        .about {
+            background-color: var(--white);
+            position: relative;
         }
-        
-        body {
-            scroll-behavior: smooth;
-            font-family: 'Inter', sans-serif;
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateZ(0);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .years-experience {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--construction-orange), #E55D0C);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+        }
+
+        .values-list {
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            background-color: rgba(249, 115, 22, 0.05);
+            transform: translateX(5px);
+        }
+
+        .value-icon {
+            color: var(--construction-orange);
+            font-size: 1.8rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            background: rgba(249, 115, 22, 0.1);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 3rem;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--construction-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--steel-gray);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--concrete-light-gray);
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(135deg, var(--navy-blue), var(--construction-orange));
+            opacity: 0;
+            transition: height 0.5s ease, opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            color: var(--white);
+        }
+
+        .service-card:hover:before {
+            height: 100%;
+            opacity: 1;
+        }
+
+        .service-card:hover h3,
+        .service-card:hover p,
+        .service-card:hover .service-icon {
+            color: var(--white);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 58, 138, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service-card:hover .service-overlay {
+            opacity: 1;
+        }
+
+        .service-overlay p {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--construction-orange);
+            margin: 1.5rem 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .service-card p {
+            padding: 0 1.5rem 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Projects Section with Filtering */
+        .projects {
+            position: relative;
+        }
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            margin: 5px;
+            background: var(--concrete-light-gray);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--construction-orange);
+            color: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(30, 58, 138, 0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-title {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .project-desc {
+            color: var(--concrete-light-gray);
+            font-size: 1rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease 0.1s;
+        }
+
+        .project-card:hover .project-title,
+        .project-card:hover .project-desc {
+            transform: translateY(0);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1100;
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 80%;
+            margin: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-details {
+            background: var(--white);
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: var(--white);
+            font-size: 40px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--construction-orange);
+        }
+
+        /* Testimonials Carousel */
+        .testimonials {
+            background: linear-gradient(to right, var(--navy-blue), #2D4BA8);
+            color: var(--white);
+            position: relative;
+        }
+
+        .testimonials h2 {
+            color: var(--white);
+        }
+
+        .testimonials h2:after {
+            background: var(--construction-orange);
+        }
+
+        .testimonial-slider {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            flex: 0 0 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            margin: 0 15px;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 3px solid var(--construction-orange);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-rating {
+            color: var(--golden-yellow);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .testimonial-role {
+            color: var(--concrete-light-gray);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background: var(--construction-orange);
+            transform: scale(1.2);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--charcoal-black);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--cool-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--construction-orange);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            flex: 1;
+            background: linear-gradient(135deg, var(--navy-blue), #2D4BA8);
+            padding: 2.5rem;
+            border-radius: 10px;
+            color: var(--white);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .info-icon {
+            color: var(--construction-orange);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .map-container {
+            margin-top: 3rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            display: block;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--construction-orange), #E55D0C);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter h2:after {
+            display: none;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .newsletter-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--navy-blue);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background-color: var(--charcoal-black);
+        }
+
+        /* Sticky Contact Button */
+        .sticky-contact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            display: none;
+        }
+
+        .sticky-contact-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--construction-orange), #E55D0C);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .sticky-contact-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal-black);
+            color: var(--concrete-light-gray);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-logo {
             font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            display: block;
         }
-        
-        .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
-            background-position: center;
-            background-size: cover;
+
+        .footer-logo span {
+            color: var(--construction-orange);
         }
-        
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--construction-orange);
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-heading:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--construction-orange);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--concrete-light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--construction-orange);
+            padding-left: 10px;
+        }
+
+        .footer-links a:before {
+            content: '→';
+            position: absolute;
+            left: -15px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover:before {
+            left: 0;
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-container,
+            .contact-container {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .testimonial-card {
+                min-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem 0;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+                color: var(--charcoal-black);
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 50px;
+                margin-bottom: 0.5rem;
+                padding-right: 15px;
+            }
+            
+            .newsletter-btn {
+                position: relative;
+                border-radius: 50px;
+                padding: 12px;
+                width: 100%;
+                right: 0;
+                top: 0;
+            }
+
+            .sticky-contact {
+                display: block;
+            }
+
+            .testimonial-card {
+                min-height: 450px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .floating-element {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                min-height: 600px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .project-title {
+                font-size: 1.2rem;
+            }
+
+            .counter {
+                font-size: 2.5rem;
+            }
+
+            .testimonial-card {
+                min-height: 500px;
+            }
+        }
+
+        /* Animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        .project-image {
-            transition: transform 0.3s ease;
+
+        /* Thank you message */
+        .thank-you-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: 500;
         }
-        
-        .project-card:hover .project-image {
-            transform: scale(1.05);
+
+        /* Form validation */
+        .form-control.error {
+            border-color: #ff3860;
+            box-shadow: 0 0 0 2px rgba(255, 56, 96, 0.2);
         }
-        
-        .testimonial-card {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out;
-        }
-        
-        .mobile-menu.open {
-            max-height: 500px;
-        }
-        
-        /* Focus styles for accessibility */
-        button:focus-visible,
-        a:focus-visible,
-        input:focus-visible,
-        textarea:focus-visible {
-            outline: 2px solid var(--secondary);
-            outline-offset: 2px;
-        }
-        
-        /* Loading animation for images */
-        img {
-            background-color: #f3f4f6;
-            background-image: linear-gradient(90deg, #f3f4f6 0px, #e5e7eb 40px, #f3f4f6 80px);
-            background-size: 600px;
-            animation: shine 1.6s infinite linear;
-        }
-        
-        @keyframes shine {
-            0% {
-                background-position: -100px;
-            }
-            100% {
-                background-position: 400px;
-            }
-        }
-        
-        img[loaded] {
-            background: none;
-            animation: none;
-        }
-        
-        /* Critical CSS for above-the-fold content */
-        .critical-show {
-            opacity: 1 !important;
-            transform: none !important;
-        }
-        
-        /* Animation for stats counter */
-        .stat-number {
-            transition: all 1s ease;
+
+        .error-message {
+            color: #ff3860;
+            font-size: 0.9rem;
+            margin-top: 5px;
         }
     </style>
 </head>
-<body class="bg-white font-sans">
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link absolute left-0 top-0 bg-primary text-white p-3 -translate-y-full focus:translate-y-0 transition-transform z-50">Skip to main content</a>
-    
-    <!-- Navigation Header -->
-    <header class="fixed w-full bg-white shadow-md z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-primary font-heading" aria-label="BuildMaster Construction - Home">BuildMaster</a>
-            
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex space-x-8" aria-label="Main navigation">
-                <a href="#home" class="text-gray-700 hover:text-secondary transition-colors">Home</a>
-                <a href="#about" class="text-gray-700 hover:text-secondary transition-colors">About</a>
-                <a href="#services" class="text-gray-700 hover:text-secondary transition-colors">Services</a>
-                <a href="#projects" class="text-gray-700 hover:text-secondary transition-colors">Projects</a>
-                <a href="#testimonials" class="text-gray-700 hover:text-secondary transition-colors">Testimonials</a>
-                <a href="#contact" class="text-gray-700 hover:text-secondary transition-colors">Contact</a>
-            </nav>
-            
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-img">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                Your <span>Company</span>
+            </a>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
             </button>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="mobile-menu md:hidden bg-white" aria-hidden="true">
-            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-                <a href="#home" class="text-gray-700 hover:text-secondary py-2 transition-colors">Home</a>
-                <a href="#about" class="text-gray-700 hover:text-secondary py-2 transition-colors">About</a>
-                <a href="#services" class="text-gray-700 hover:text-secondary py-2 transition-colors">Services</a>
-                <a href="#projects" class="text-gray-700 hover:text-secondary py-2 transition-colors">Projects</a>
-                <a href="#testimonials" class="text-gray-700 hover:text-secondary py-2 transition-colors">Testimonials</a>
-                <a href="#contact" class="text-gray-700 hover:text-secondary py-2 transition-colors">Contact</a>
-            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="btn btn-primary">Request Quote</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg bg-cover bg-center bg-no-repeat pt-24 pb-16 md:pt-32 md:pb-24 relative" aria-labelledby="hero-heading">
-        <div class="absolute inset-0 bg-dark opacity-75"></div>
-        <div class="container mx-auto px-4 relative z-10 text-white">
-            <div class="max-w-2xl fade-in critical-show">
-                <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading">Building with Strength, Precision & Trust</h1>
-                <p class="text-xl mb-8">Your trusted partner for construction projects of all sizes. We deliver quality, safety, and excellence in every project we undertake.</p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="bg-secondary hover:bg-secondary-hover text-white font-semibold py-3 px-6 rounded-lg transition-colors text-center focus:ring-2 focus:ring-offset-2 focus:ring-secondary">Request a Free Quote</a>
-                    <a href="tel:5551234567" class="bg-transparent hover:bg-white/10 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white transition-colors text-center focus:ring-2 focus:ring-offset-2 focus:ring-white">Call Now: (555) 123-4567</a>
+    <section id="hero" class="hero">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Building with <span class="typewriter">Strength, Precision & Trust</span></h1>
+            <p>Your trusted partner for construction excellence for over 15 years</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Request a Free Quote</a>
+                <a href="tel:+1234567890" class="btn btn-secondary">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-container">
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Construction team">
+                </div>
+                <div class="about-content">
+                    <span class="years-experience">15+ Years Experience</span>
+                    <h3>Building Dreams with Precision and Quality</h3>
+                    <p>Your Company is a full-service construction firm with a commitment to excellence in every project we undertake. From commercial builds to residential renovations, we bring skill, dedication, and integrity to every job.</p>
+                    <p>Our mission is to deliver exceptional construction services that exceed client expectations while maintaining the highest standards of safety, quality, and professionalism.</p>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-hard-hat"></i></div>
+                            <div>
+                                <h4>Safety First</h4>
+                                <p>We prioritize safety on every project, ensuring protection for our team and your property.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-award"></i></div>
+                            <div>
+                                <h4>Quality Craftsmanship</h4>
+                                <p>We take pride in our attention to detail and commitment to superior results.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                            <div>
+                                <h4>Integrity & Trust</h4>
+                                <p>We build relationships based on honesty, transparency, and reliability.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 md:mt-24">
-                <div class="text-center fade-in">
-                    <p class="text-4xl font-bold stat-number" data-target="15">0+</p>
-                    <p class="text-lg">Years Experience</p>
+            <div class="stats-container">
+                <div class="stat-item fade-in">
+                    <div class="counter" data-target="15">0</div>
+                    <div class="stat-label">Years Experience</div>
                 </div>
-                <div class="text-center fade-in">
-                    <p class="text-4xl font-bold stat-number" data-target="350">0+</p>
-                    <p class="text-lg">Projects Completed</p>
+                <div class="stat-item fade-in">
+                    <div class="counter" data-target="350">0</div>
+                    <div class="stat-label">Projects Completed</div>
                 </div>
-                <div class="text-center fade-in">
-                    <p class="text-4xl font-bold stat-number" data-target="98">0%</p>
-                    <p class="text-lg">Happy Clients</p>
+                <div class="stat-item fade-in">
+                    <div class="counter" data-target="98">0</div>
+                    <div class="stat-label">Client Satisfaction</div>
                 </div>
-                <div class="text-center fade-in">
-                    <p class="text-4xl font-bold">100%</p>
-                    <p class="text-lg">Satisfaction Rate</p>
+                <div class="stat-item fade-in">
+                    <div class="counter" data-target="45">0</div>
+                    <div class="stat-label">Team Members</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <main id="main-content">
-        <!-- About Section -->
-        <section id="about" class="py-16 bg-light" aria-labelledby="about-heading">
-            <div class="container mx-auto px-4">
-                <h2 id="about-heading" class="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-heading">About BuildMaster</h2>
-                
-                <div class="flex flex-col lg:flex-row items-center gap-10">
-                    <div class="w-full lg:w-1/2 fade-in">
-                        <p class="text-lg text-gray-700 mb-6">
-                            Founded in 2008, BuildMaster has established itself as a leading construction firm specializing in both residential and commercial projects. Our mission is to deliver exceptional craftsmanship, innovative solutions, and unparalleled customer service.
-                        </p>
-                        <p class="text-lg text-gray-700 mb-6">
-                            With over 15 years of experience, we've built a reputation for completing projects on time and within budget while maintaining the highest standards of quality and safety. Our team of skilled professionals is committed to excellence in every aspect of our work.
-                        </p>
-                        <p class="text-lg text-gray-700">
-                            We believe in transparent communication, collaborative planning, and building lasting relationships with our clients. Your vision is our blueprint, and we work tirelessly to bring it to life with precision and expertise.
-                        </p>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="General Contracting">
+                        <div class="service-overlay">
+                            <p>End-to-end project management from planning to completion</p>
+                        </div>
                     </div>
-                    
-                    <div class="w-full lg:w-1/2 fade-in">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Construction team planning a project" class="rounded-lg shadow-lg w-full h-auto" loading="lazy">
-                    </div>
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <h3>General Contracting</h3>
+                    <p>Full-service contracting from planning to completion, ensuring quality and timely delivery.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
-                
-                <!-- Highlights -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-                    <div class="bg-card p-6 rounded-lg shadow-md text-center fade-in">
-                        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                            </svg>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1591822059941-5d9732490a8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Roofing">
+                        <div class="service-overlay">
+                            <p>Professional installation, repair, and maintenance for all roof types</p>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2 font-heading">Licensed & Insured</h3>
-                        <p class="text-gray-700">Fully licensed, bonded, and insured for your peace of mind and protection.</p>
                     </div>
-                    
-                    <div class="bg-card p-6 rounded-lg shadow-md text-center fade-in">
-                        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2 font-heading">Affordable Pricing</h3>
-                        <p class="text-gray-700">Competitive rates without compromising on quality or craftsmanship.</p>
-                    </div>
-                    
-                    <div class="bg-card p-6 rounded-lg shadow-md text-center fade-in">
-                        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2 font-heading">Quality Work</h3>
-                        <p class="text-gray-700">Commitment to excellence with attention to detail in every project we undertake.</p>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Roofing</h3>
+                    <p>Professional roofing services including installation, repair, and maintenance for all roof types.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-16 bg-white" aria-labelledby="services-heading">
-            <div class="container mx-auto px-4">
-                <h2 id="services-heading" class="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-heading">Our Services</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="bg-card rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 hover:shadow-lg fade-in">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="General Contracting" class="w-full h-48 object-cover" loading="lazy">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 font-heading">General Contracting</h3>
-                            <p class="text-gray-700">Full-service contracting from project planning to completion with expert management.</p>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1628595579535-28c68eefc90e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Masonry">
+                        <div class="service-overlay">
+                            <p>Expert brick, stone, and concrete work for durable and beautiful results</p>
                         </div>
                     </div>
-                    
-                    <!-- Service Card 2 -->
-                    <div class="bg-card rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 hover:shadow-lg fade-in">
-                        <img src="https://images.unsplash.com/photo-1585496385915-c8cee91a4825?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Roofing services" class="w-full h-48 object-cover" loading="lazy">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 font-heading">Roofing</h3>
-                            <p class="text-gray-700">Professional roofing services including installation, repair, and maintenance for all roof types.</p>
+                    <div class="service-icon"><i class="fas fa-border-style"></i></div>
+                    <h3>Masonry</h3>
+                    <p>Expert masonry work including brick, stone, and concrete for durable and beautiful results.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Remodeling">
+                        <div class="service-overlay">
+                            <p>Transform your space with expert remodeling services for homes and businesses</p>
                         </div>
                     </div>
-                    
-                    <!-- Service Card 3 -->
-                    <div class="bg-card rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 hover:shadow-lg fade-in">
-                        <img src="https://images.unsplash.com/photo-1595954983881-6b6f9a2735f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Masonry work" class="w-full h-48 object-cover" loading="lazy">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 font-heading">Masonry</h3>
-                            <p class="text-gray-700">Expert brick, stone, and concrete work for durable and aesthetically pleasing results.</p>
+                    <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
+                    <h3>Remodeling</h3>
+                    <p>Transform your space with our expert remodeling services for homes and businesses.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1602817538386-50e1e9dfc5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Concrete Work">
+                        <div class="service-overlay">
+                            <p>Professional concrete services including pouring, finishing, and repair</p>
                         </div>
                     </div>
-                    
-                    <!-- Service Card 4 -->
-                    <div class="bg-card rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 hover:shadow-lg fade-in">
-                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Remodeling service" class="w-full h-48 object-cover" loading="lazy">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 font-heading">Remodeling</h3>
-                            <p class="text-gray-700">Transform your space with our custom remodeling services for kitchens, bathrooms, and more.</p>
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Concrete Work</h3>
+                    <p>Professional concrete services including pouring, finishing, and repair for any project.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Commercial Projects">
+                        <div class="service-overlay">
+                            <p>Complete commercial construction services for offices, retail spaces, and more</p>
                         </div>
                     </div>
-                    
-                    <!-- Service Card 5 -->
-                    <div class="bg-card rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 hover:shadow-lg fade-in">
-                        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Concrete work" class="w-full h-48 object-cover" loading="lazy">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 font-heading">Concrete Work</h3>
-                            <p class="text-gray-700">Professional concrete pouring, finishing, and repair for driveways, patios, and foundations.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Service Card 6 -->
-                    <div class="bg-card rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 hover:shadow-lg fade-in">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Commercial construction projects" class="w-full h-48 object-cover" loading="lazy">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 font-heading">Commercial Projects</h3>
-                            <p class="text-gray-700">Complete commercial construction services for offices, retail spaces, and industrial buildings.</p>
-                        </div>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-industry"></i></div>
+                    <h3>Commercial Projects</h3>
+                    <p>Complete commercial construction services for offices, retail spaces, and more.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-16 bg-light" aria-labelledby="projects-heading">
-            <div class="container mx-auto px-4">
-                <h2 id="projects-heading" class="text-3xl md:text-4xl font-bold text-center text-primary mb-8 font-heading">Our Projects</h2>
-                
-                <!-- Filter Buttons -->
-                <div class="flex flex-wrap justify-center gap-4 mb-12">
-                    <button class="filter-btn active bg-secondary text-white px-4 py-2 rounded-lg" data-filter="all">All Projects</button>
-                    <button class="filter-btn bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded-lg transition-colors" data-filter="residential">Residential</button>
-                    <button class="filter-btn bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded-lg transition-colors" data-filter="commercial">Commercial</button>
-                    <button class="filter-btn bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded-lg transition-colors" data-filter="remodeling">Remodeling</button>
-                </div>
-                
-                <!-- Project Gallery -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Project 1 -->
-                    <div class="project-card residential fade-in" data-type="residential">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                            <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modern House Construction" class="w-full h-56 object-cover project-image" loading="lazy">
-                                <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity">
-                                    <button class="view-image bg-secondary text-white px-4 py-2 rounded-lg" data-image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">View Project</button>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold font-heading">Modern Family Home</h3>
-                                <p class="text-gray-600">Residential</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="project-card commercial fade-in" data-type="commercial">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                            <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Office Building" class="w-full h-56 object-cover project-image" loading="lazy">
-                                <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity">
-                                    <button class="view-image bg-secondary text-white px-4 py-2 rounded-lg" data-image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">View Project</button>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold font-heading">Corporate Office Complex</h3>
-                                <p class="text-gray-600">Commercial</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="project-card remodeling fade-in" data-type="remodeling">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                            <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kitchen Remodel" class="w-full h-56 object-cover project-image" loading="lazy">
-                                <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity">
-                                    <button class="view-image bg-secondary text-white px-4 py-2 rounded-lg" data-image="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">View Project</button>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold font-heading">Kitchen Renovation</h3>
-                                <p class="text-gray-600">Remodeling</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 4 -->
-                    <div class="project-card residential fade-in" data-type="residential">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                            <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Luxury Home" class="w-full h-56 object-cover project-image" loading="lazy">
-                                <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity">
-                                    <button class="view-image bg-secondary text-white px-4 py-2 rounded-lg" data-image="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">View Project</button>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold font-heading">Luxury Estate Home</h3>
-                                <p class="text-gray-600">Residential</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 5 -->
-                    <div class="project-card commercial fade-in" data-type="commercial">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                            <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Retail Space" class="w-full h-56 object-cover project-image" loading="lazy">
-                                <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity">
-                                    <button class="view-image bg-secondary text-white px-4 py-2 rounded-lg" data-image="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">View Project</button>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold font-heading">Shopping Center</h3>
-                                <p class="text-gray-600">Commercial</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 6 -->
-                    <div class="project-card remodeling fade-in" data-type="remodeling">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                            <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bathroom Remodel" class="w-full h-56 object-cover project-image" loading="lazy">
-                                <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity">
-                                    <button class="view-image bg-secondary text-white px-4 py-2 rounded-lg" data-image="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">View Project</button>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold font-heading">Bathroom Transformation</h3>
-                                <p class="text-gray-600">Remodeling</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Our Projects</h2>
+            <p class="text-center">Take a look at some of our completed projects that showcase our quality and expertise</p>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="renovation">Renovation</button>
             </div>
             
-            <!-- Image Modal -->
-            <div id="image-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center hidden" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-image-label">
-                <div class="relative max-w-4xl w-full mx-4">
-                    <button id="close-modal" class="absolute -top-10 right-0 text-white text-2xl" aria-label="Close image modal">&times;</button>
-                    <img id="modal-image" src="" alt="Project image" class="w-full rounded-lg">
+            <div class="projects-grid">
+                <div class="project-card fade-in" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63ac8114?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern Office Building" class="project-img">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Modern Office Complex</h3>
+                        <p class="project-desc">Commercial construction with innovative design elements</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-16 bg-white" aria-labelledby="testimonials-heading">
-            <div class="container mx-auto px-4">
-                <h2 id="testimonials-heading" class="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-heading">What Our Clients Say</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="testimonial-card bg-light p-6 rounded-lg shadow-md fade-in">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="John Smith" class="w-full h-full object-cover" loading="lazy">
-                            </div>
-                            <div>
-                                <h3 class="font-semibold font-heading">John Smith</h3>
-                                <p class="text-gray-600">Homeowner</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 mb-4">"BuildMaster transformed our outdated kitchen into a modern, functional space. Their attention to detail and professionalism throughout the project was impressive. They completed the work on time and within budget."</p>
-                        <div class="flex space-x-1">
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        </div>
+                <div class="project-card fade-in" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Luxury Home" class="project-img">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Luxury Residence</h3>
+                        <p class="project-desc">Custom-built home with premium finishes</p>
                     </div>
-
-                    <div class="testimonial-card bg-light p-6 rounded-lg shadow-md fade-in">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Sarah Johnson" class="w-full h-full object-cover" loading="lazy">
-                            </div>
-                            <div>
-                                <h3 class="font-semibold font-heading">william Johnson</h3>
-                                <p class="text-gray-600">Business Owner</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 mb-4">"We hired BuildMaster for our office expansion, and they delivered exceptional results. Their team was professional, communicative, and handled all challenges efficiently. The project was completed ahead of schedule!"</p>
-                        <div class="flex space-x-1">
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 
-               3.292a1 1 0 00.95.69h3.462c.969 0 
-               1.371 1.24.588 1.81l-2.8 2.034a1 
-               1 0 00-.364 1.118l1.07 3.292c.3.921-.755 
-               1.688-1.54 1.118l-2.8-2.034a1 
-               1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 
-               1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 
-               1 0 00.951-.69l1.07-3.292z">
-      </path>
-    </svg>
-                            <svg  class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 
-               3.292a1 1 0 00.95.69h3.462c.969 0 
-               1.371 1.24.588 1.81l-2.8 2.034a1 
-               1 0 00-.364 1.118l1.07 3.292c.3.921-.755 
-               1.688-1.54 1.118l-2.8-2.034a1 
-               1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 
-               1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 
-               1 0 00.951-.69l1.07-3.292z">
-      </path>
-    </svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 
-               3.292a1 1 0 00.95.69h3.462c.969 0 
-               1.371 1.24.588 1.81l-2.8 2.034a1 
-               1 0 00-.364 1.118l1.07 3.292c.3.921-.755 
-               1.688-1.54 1.118l-2.8-2.034a1 
-               1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 
-               1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 
-               1 0 00.951-.69l1.07-3.292z">
-      </path>
-    </svg>
-                        </div>
+                </div>
+                <div class="project-card fade-in" data-category="renovation">
+                    <img src="https://images.unsplash.com/photo-1628744404730-5e143358539b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Kitchen Remodel" class="project-img">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Kitchen Renovation</h3>
+                        <p class="project-desc">Complete kitchen remodel with custom cabinetry</p>
                     </div>
-                    
-                    <div class="testimonial-card bg-light p-6 rounded-lg shadow-md fade-in">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Kate Brown" class="w-full h-full object-cover" loading="lazy">
-                            </div>
-                            <div>
-                                <h3 class="font-sem极速3.0old font-heading">Kate Brown</h3>
-                                <p class="text-gray-600">Property Developer</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 mb-4">"I've worked with many construction companies, but BuildMaster stands out for their quality work and reliability. They understand the importance of deadlines and deliver exceptional results every time."</p>
-                        <div class="flex space-x-1">
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902极速3.0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81极速3.0-2.8 2.034a1 1 0 00-.364 极速3.0.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a极速3.0 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-5极速3.0 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3极速3.0.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2极速3.0.8-2.034a1 1 0 00-1.175 0l-2.8 2.034极速3.0-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-极速3.0.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1极速3.0.07-3.292z"></path></svg>
-                        </div>
+                </div>
+                <div class="project-card fade-in" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1620371350506-4a963522dc1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Concrete Patio" class="project-img">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Outdoor Living Space</h3>
+                        <p class="project-desc">Custom concrete patio with finishing touches</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in" data-category="renovation">
+                    <img src="https://images.unsplash.com/photo-1515574838751-8c0911f48b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Bathroom Remodel" class="project-img">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Bathroom Remodel</h3>
+                        <p class="project-desc">Luxury bathroom renovation with premium fixtures</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1581985673473-1c8eb4b5ddc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Roofing Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Commercial Roofing</h3>
+                        <p class="project-desc">Durable roofing solution for retail space</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-16 bg-light" aria-labelledby="contact-heading">
-            <div class="container mx-auto px-4">
-                <h2 id="contact-heading" class="text-3极速3.0xl md:text-4xl font-bold text-center text-primary mb-12 font-heading">Get In Touch</h2>
-                
-                <div class="flex flex-col lg:flex-row gap-10">
-                    <div class="w-full lg:w-1/2 fade-in">
-                        <form id="contact-form" class="bg-white p-6 rounded-lg shadow-md">
-                            <div class="mb-4">
-                                <label for="name" class="block text-gray-700 mb-2">Full Name</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <span class="modal-close" id="modal-close">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div class="modal-details">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <div class="project-details">
+                <p><strong>Project Type:</strong> <span id="modal-type"></span></p>
+                <p><strong>Completion Date:</strong> <span id="modal-date"></span></p>
+                <p><strong>Client:</strong> <span id="modal-client"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="John Smith" class="testimonial-img">
+                            <div>
+                                <h3>John Smith</h3>
+                                <p class="testimonial-role">Homeowner</p>
                             </div>
-                            <div class="mb-4">
-                                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg极速3.0 focus:outline-none focus:ring-2 focus:ring-secondary">
-                            </div>
-                            <div class="mb-4">
-                                <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
-                            </div>
-                            <div class="mb-4">
-                                <label for="message" class="block text-gray-700 mb-2">Message</label>
-                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
-                            </div>
-                            <button type="submit" class="bg-secondary hover:bg-secondary-hover text-white font-semibold py-3 px-6 rounded-lg transition-colors w-full focus:ring-2 focus:ring-offset-2 focus:ring-secondary">Send Message</button>
-                        </form>
-                        
-                        <div id="form-thankyou" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mt-4">
-                            Thank you for your message! We will get back to you soon.
                         </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Your Company transformed our outdated kitchen into a modern masterpiece. Their attention to detail and professionalism made the process smooth and stress-free. Highly recommend!"</p>
                     </div>
-                    
-                    <div class="w-full lg:w-1/2 fade-in">
-                        <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-semibold mb-4 font-heading">Subscribe to Our Newsletter</h3>
-                            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-2">
-                                <input type="email" placeholder="Your email address" required class="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
-                                <button type="submit" class="bg-secondary hover:bg-secondary-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">Subscribe</button>
-                            </form>
-                            <div id="newsletter-thankyou" class="hidden bg-green-100 border border-green-400 text-green极速3.0-700 px-4 py-3 rounded-lg mt-4">
-                                Thank you for subscribing!
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Sarah Johnson" class="testimonial-img">
+                            <div>
+                                <h3>Sarah Johnson</h3>
+                                <p class="testimonial-role">Business Owner</p>
                             </div>
                         </div>
-                        
-                        <div class="mb-8 rounded-lg overflow-hidden shadow-md">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.38943724267!2d-80.29949920273436!3d25.782545311633097!2m3!1极速3.00!2f0!3f0!3m极速3.02!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20FL!5e0!3m2!1sen!2sus!4v1726875354781!5m2!1sen!2sus"
-                                width="100%"
-                                height="300"
-                                style="border:0;"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                title="BuildMaster Construction Location">
-                            </iframe>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
-                        
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-semibold mb-4 font-heading">Contact Information</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-start">
-                                    <svg class="w-5 h-5 text-secondary mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 极速3.0 1111.313 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 极速3.00 3 3 0 016 0z"></path>
-                                    </svg>
-                                    <p>123 Construction Avenue, Miami, FL 33101</p>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-secondary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502极速3.0l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-极速3.02 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                    </svg>
-                                    <a href="tel:5551234567" class="hover:text-secondary transition-colors">(555) 123-4567</a>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-5 h-5 text-secondary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7a2 2 0 002 2z"></path>
-                                    </svg>
-                                    <a href="mailto:info@buildmaster.com" class="hover:text-secondary transition-colors">info@buildmaster.com</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-6">
-                            <h3 class="text-xl font-semibold mb-3 font-heading">Business Hours</h3>
-                            <div class="space-y-1">
-                                <p class="flex justify-between"><span>Monday - Friday:</span> <span>8:00 AM - 6:00 PM</span></p>
-                                <p class="flex justify-between"><span>Saturday:</span> <span>9:00 AM - 1:00 PM</span></p>
-                                <p class="flex justify-between"><span>Sunday:</span> <span>Closed</span></p>
-                            </div>
-                            
-                            <div class="flex space-x-4 mt-6">
-                                <a href="#" class="bg-gray-200 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors group" aria-label="Facebook">
-                                    <svg class="w-5 h-5 text-gray-700 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12极速3.0h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
-                                    </svg>
-                                </a>
-                                <a href="#" class="bg-gray-200 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors group" aria-label="LinkedIn">
-                                    <svg class="w-5 h-5 text-gray-700 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c极速3.00 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h极速3.03v-5.604c0-3.368-4-3.113-4 0v极速3.0.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                    </svg>
-                                </a>
-                                <a href="#" class="bg-gray-200 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors group" aria-label="Instagram">
-                                    <svg class="w-5 h-5 text-gray-700 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-极速3.06.98-1.281.059-1.69.072-4.949.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                    </svg>
-                                </a>
-                                <a href="#" class="bg-gray-200 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors group" aria-label="YouTube">
-                                    <svg class="w-5 h-5 text-gray-700 group极速3.0hover:text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
+                        <p class="testimonial-text">"We hired Your Company for our office expansion, and they delivered beyond our expectations. The project was completed on time and within budget. Will definitely work with them again."</p>
                     </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Michael Brown" class="testimonial-img">
+                            <div>
+                                <h3>Michael Brown</h3>
+                                <p class="testimonial-role">Property Developer</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"I've worked with many construction companies, but Your Company stands out for their quality work and reliability. They're my go-to for all my development projects."</p>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active"></div>
+                    <div class="testimonial-dot"></div>
+                    <div class="testimonial-dot"></div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="bg-dark text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 font-heading">BuildMaster</h3>
-                    <p class="mb-4">Building with strength, precision and trust since 2008. Your trusted partner for construction projects of all sizes.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-secondary transition-colors" aria-label="Facebook">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c极速3.00 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.极速3.046h-1.26c-1.243 0-1.极速3.0.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="hover:text-secondary transition-colors" aria-label="LinkedIn">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/s极速3.0g">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5极速3.0h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="hover:text-secondary transition-colors" aria-label="Instagram">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.极速3.00-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 极速3.0.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.极速3.080.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281.059-1.69.072-4.949.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="hover:text-secondary transition-colors" aria-label="YouTube">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6极速3.0.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8极速3.0l8 3.993-8 4.007z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 font-heading">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="hover:text-secondary transition-colors">Home</a></li>
-                        <li><a href="#about" class="hover:text-secondary transition-colors">About Us</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors">Services</a></li>
-                        <li><a href="#projects" class="hover:text-secondary transition-colors">Projects</a></li>
-                        <li><a href="#testimonials" class="hover:text-secondary transition-colors">Testimonials</a></li>
-                        <li><a href="#contact" class="hover:text-secondary transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 font-heading">Our Services</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#services" class="hover:text-secondary transition-colors">General Contracting</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors">Roofing</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors">Masonry</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors">Remodeling</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors">Concrete Work</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors">Commercial Projects</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 font-heading">Newsletter</h3>
-                    <p class="mb-4">Subscribe to our newsletter to get updates on our latest projects and promotions.</p>
-                    <form id="footer-newsletter-form" class="flex flex-col sm:flex-row gap-2">
-                        <input type="email" placeholder="Your email address" required class="flex-grow px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary">
-                        <button type="submit" class="bg-secondary hover:bg-secondary-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">Subscribe</button>
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with our latest projects, tips, and special offers</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+            <div class="thank-you-message" id="newsletter-thank-you">Thank you for subscribing to our newsletter!</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                            <div class="error-message" id="phone-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
-                    <div id="footer-newsletter-thankyou" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mt-4">
-                        Thank you for subscribing!
+                    <div class="thank-you-message" id="contact-thank-you">Thank you for your message! We'll get back to you soon.</div>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Construction Avenue, Buildersville, BC 12345</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>(123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@yourcompany.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday-Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95874.841301915!2d-122.908716!3d49.25053899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548677e5c5cfffff%3A0x7a60fc2f45b5f14a!2sSurrey%2C%20BC!5e0!3m2!1sen!2sca!4v1685494830153!5m2!1sen!2sca" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p>© 2025 BuildMaster Construction. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- Sticky Contact Button -->
+    <div class="sticky-contact">
+        <a href="#contact" class="sticky-contact-btn">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Your <span>Company</span></a>
+                    <p>Providing quality construction services for over 15 years. We build with strength, precision, and trust.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul>
+                        <li><a href="#services">General Contracting</a></li>
+                        <li><a href="#services">Roofing</a></li>
+                        <li><a href="#services">Masonry</a></li>
+                        <li><a href="#services">Remodeling</a></li>
+                        <li><a href="#services">Concrete Work</a></li>
+                        <li><a href="#services">Commercial Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Construction Avenue, Buildersville, BC 12345</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@yourcompany.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Your Company Construction. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
         
-        menuBtn.addEventListener('click', function() {
-            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-            menuBtn.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.setAttribute('aria-hidden', isExpanded);
-            mobileMenu.classList.toggle('open');
+        mobileNavToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileNavToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
-        
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Show/hide sticky contact button
+            const stickyContact = document.querySelector('.sticky-contact');
+            if (window.scrollY > 500) {
+                stickyContact.style.display = 'block';
+            } else {
+                stickyContact.style.display = 'none';
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
@@ -781,13 +1890,11 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     // Close mobile menu if open
-                    if (mobileMenu.classList.contains('open')) {
-                        menuBtn.setAttribute('aria-expanded', 'false');
-                        mobileMenu.setAttribute('aria-hidden', 'true');
-                        mobileMenu.classList.remove('open');
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
                     }
                     
-                    // Scroll to element
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -795,201 +1902,284 @@
                 }
             });
         });
-        
-        // Fade-in animation on scroll with throttling
-        let scrollTimeout;
-        function checkFade() {
-            const elements = document.querySelectorAll('.fade-in:not(.critical-show)');
-            elements.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                const elementVisible = 150;
-                if (elementTop < window.innerHeight - elementVisible) {
-                    el.classList.add('visible');
-                }
-            });
-        }
-        
-        function throttleScroll() {
-            if (!scrollTimeout) {
-                scrollTimeout = setTimeout(function() {
-                    scrollTimeout = null;
-                    checkFade();
-                }, 100);
-            }
-        }
-        
-        window.addEventListener('scroll', throttleScroll);
-        window.addEventListener('load', checkFade);
-        
-        // Project filter
-        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        // Project modal functionality
         const projectCards = document.querySelectorAll('.project-card');
+        const modal = document.getElementById('project-modal');
+        const modalImg = document.getElementById('modal-image');
+        const modalClose = document.getElementById('modal-close');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalType = document.getElementById('modal-type');
+        const modalDate = document.getElementById('modal-date');
+        const modalClient = document.getElementById('modal-client');
         
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Update active button
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('active', 'bg-secondary', 'text-white');
-                    btn.classList.add('bg-gray-300', 'hover:bg-gray-400');
-                });
-                button.classList.add('active', 'bg-secondary', 'text-white');
-                button.classList.remove('bg-gray-300', 'hover:bg-gray-400');
+        // Project data for modal details
+        const projectData = {
+            0: {
+                title: "Modern Office Complex",
+                description: "A state-of-the-art office building designed for productivity and comfort with sustainable materials and energy-efficient systems.",
+                type: "Commercial",
+                date: "June 2023",
+                client: "Tech Solutions Inc."
+            },
+            1: {
+                title: "Luxury Residence",
+                description: "A custom-built luxury home featuring premium finishes, smart home technology, and expansive outdoor living spaces.",
+                type: "Residential",
+                date: "March 2023",
+                client: "The Johnson Family"
+            },
+            2: {
+                title: "Kitchen Renovation",
+                description: "Complete kitchen transformation with custom cabinetry, quartz countertops, and high-end appliances for a modern cooking experience.",
+                type: "Renovation",
+                date: "January 2023",
+                client: "Sarah Williams"
+            },
+            3: {
+                title: "Outdoor Living Space",
+                description: "Beautifully designed outdoor area with stamped concrete patio, built-in seating, and a custom fire pit for year-round enjoyment.",
+                type: "Residential",
+                date: "August 2022",
+                client: "Michael Roberts"
+            },
+            4: {
+                title: "Bathroom Remodel",
+                description: "Luxury bathroom renovation with spa-like features including a freestanding tub, rainfall shower, and custom vanity.",
+                type: "Renovation",
+                date: "November 2022",
+                client: "Lisa Thompson"
+            },
+            5: {
+                title: "Commercial Roofing",
+                description: "Durable commercial roofing solution for a retail space with a 20-year warranty and energy-efficient insulation.",
+                type: "Commercial",
+                date: "May 2022",
+                client: "City Mall Developments"
+            }
+        };
+        
+        projectCards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                const imgSrc = card.querySelector('.project-img').src;
+                modal.style.display = 'flex';
+                modalImg.src = imgSrc;
                 
-                // Filter projects
-                const filterValue = button.getAttribute('data-filter');
+                // Set modal content based on project data
+                modalTitle.textContent = projectData[index].title;
+                modalDescription.textContent = projectData[index].description;
+                modalType.textContent = projectData[index].type;
+                modalDate.textContent = projectData[index].date;
+                modalClient.textContent = projectData[index].client;
                 
-                projectCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-type') === filterValue) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.classList.add('visible');
-                        }, 10);
-                    } else {
-                        card.classList.remove('visible');
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-        
-        // Image modal
-        const viewButtons = document.querySelectorAll('.view-image');
-        const imageModal = document.getElementById('image-modal');
-        const modalImage = document.getElementById('modal-image');
-        const closeModal = document.getElementById('close-modal');
-        
-        viewButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const imageUrl = button.getAttribute('data-image');
-                modalImage.setAttribute('src', imageUrl);
-                modalImage.setAttribute('alt', 'Project image');
-                imageModal.classList.remove('hidden');
-                imageModal.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
             });
         });
         
-        closeModal.addEventListener('click', () => {
-            imageModal.classList.add('hidden');
-            imageModal.setAttribute('aria-hidden', 'true');
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         });
         
-        imageModal.addEventListener('click', (e) => {
-            if (e.target === imageModal) {
-                imageModal.classList.add('hidden');
-                imageModal.setAttribute('aria-hidden', 'true');
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         });
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-card');
         
-        // Form submission
-        const contactForm = document.getElementById('contact-form');
-        const formThankYou = document.getElementById('form-thankyou');
-        const newsletterForm = document.getElementById('newsletter-form');
-        const newsletterThankYou = document.getElementById('newsletter-thankyou');
-        const footerNewsletterForm = document.getElementById('footer-newsletter-form');
-        const footerNewsletterThankYou = document.getElementById('footer-newsletter-thankyou');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // In a real application, you would send the form data to a server here
-                formThankYou.classList.remove('hidden');
-                contactForm.reset();
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
                 
-                // Hide thank you message after 5 seconds
-                setTimeout(() => {
-                    formThankYou.classList.add('hidden');
-                }, 5000);
-            });
-        }
-        
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // In a real application, you would send the email to a server here
-                newsletterThankYou.classList.remove('hidden');
-                newsletterForm.reset();
+                // Add active class to clicked button
+                button.classList.add('active');
                 
-                // Hide thank you message after 5 seconds
-                setTimeout(() => {
-                    newsletterThankYou.classList.add('hidden');
-                }, 5000);
-            });
-        }
-        
-        if (footerNewsletterForm) {
-            footerNewsletterForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // In a real application, you would send the email to a server here
-                footerNewsletterThankYou.classList.remove('hidden');
-                footerNewsletterForm.reset();
+                const filterValue = button.getAttribute('data-filter');
                 
-                // Hide thank you message after 5 seconds
-                setTimeout(() => {
-                    footerNewsletterThankYou.classList.add('hidden');
-                }, 5000);
-            });
-        }
-        
-        // Animate stats counter
-        function animateValue(obj, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start) + (obj.getAttribute('data-target') === '98' ? '%' : '+');
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-        
-        const statElements = document.querySelectorAll('.stat-number');
-        
-        // Intersection Observer for stats animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.getAttribute('data-target'));
-                    animateValue(entry.target, 0, target, 2000);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        statElements.forEach(el => {
-            observer.observe(el);
-        });
-        
-        // Lazy load images with intersection observer
-        if ('IntersectionObserver' in window) {
-            const lazyImageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const lazyImage = entry.target;
-                        lazyImage.src = lazyImage.dataset.src;
-                        lazyImage.classList.remove('lazy');
-                        lazyImageObserver.unobserve(lazyImage);
-                        
-                        // Mark image as loaded for styling
-                        lazyImage.addEventListener('load', () => {
-                            lazyImage.setAttribute('loaded', 'true');
-                        });
+                projectItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
                     }
                 });
             });
+        });
+
+        // Testimonial slider
+        const track = document.querySelector('.testimonial-track');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let currentIndex = 0;
+        
+        function moveToSlide(index) {
+            track.style.transform = `translateX(-${index * 100}%)`;
             
-            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-                img.dataset.src = img.src;
-                img.src = '';
-                lazyImageObserver.observe(img);
+            // Update dots
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            
+            currentIndex = index;
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                moveToSlide(index);
+            });
+        });
+        
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % dots.length;
+            moveToSlide(currentIndex);
+        }, 5000);
+
+        // Form validation
+        const contactForm = document.getElementById('contact-form');
+        const contactThankYou = document.getElementById('contact-thank-you');
+        const nameError = document.getElementById('name-error');
+        const emailError = document.getElementById('email-error');
+        const phoneError = document.getElementById('phone-error');
+        const messageError = document.getElementById('message-error');
+        
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        function validatePhone(phone) {
+            const re = /^[\+]?[1-9][\d]{0,15}$/;
+            return re.test(phone);
+        }
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Reset errors
+            nameError.textContent = '';
+            emailError.textContent = '';
+            phoneError.textContent = '';
+            messageError.textContent = '';
+            
+            document.getElementById('name').classList.remove('error');
+            document.getElementById('email').classList.remove('error');
+            document.getElementById('phone').classList.remove('error');
+            document.getElementById('message').classList.remove('error');
+            
+            // Validate name
+            const name = document.getElementById('name').value;
+            if (name.trim() === '') {
+                nameError.textContent = 'Name is required';
+                document.getElementById('name').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate email
+            const email = document.getElementById('email').value;
+            if (email.trim() === '') {
+                emailError.textContent = 'Email is required';
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                emailError.textContent = 'Please enter a valid email';
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate phone (optional)
+            const phone = document.getElementById('phone').value;
+            if (phone.trim() !== '' && !validatePhone(phone)) {
+                phoneError.textContent = 'Please enter a valid phone number';
+                document.getElementById('phone').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate message
+            const message = document.getElementById('message').value;
+            if (message.trim() === '') {
+                messageError.textContent = 'Message is required';
+                document.getElementById('message').classList.add('error');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // In a real application, you would send the form data to a server here
+                contactThankYou.style.display = 'block';
+                contactForm.reset();
+                setTimeout(() => {
+                    contactThankYou.style.display = 'none';
+                }, 5000);
+            }
+        });
+        
+        const newsletterForm = document.getElementById('newsletter-form');
+        const newsletterThankYou = document.getElementById('newsletter-thank-you');
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input[type="email"]').value;
+            
+            if (validateEmail(email)) {
+                // In a real application, you would send the email to a server here
+                newsletterThankYou.style.display = 'block';
+                newsletterForm.reset();
+                setTimeout(() => {
+                    newsletterThankYou.style.display = 'none';
+                }, 5000);
+            } else {
+                newsletterForm.querySelector('input[type="email"]').classList.add('error');
+            }
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(() => animateCounters(), 1);
+                } else {
+                    counter.innerText = target;
+                }
             });
         }
+        
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const checkFade = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const isVisible = (elementTop < window.innerHeight - 100) && (elementBottom > 0);
+                
+                if (isVisible) {
+                    element.classList.add('visible');
+                    
+                    // Start counter animation when stats section is visible
+                    if (element.parentElement.classList.contains('stat-item')) {
+                        animateCounters();
+                    }
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', checkFade);
+        window.addEventListener('resize', checkFade);
     </script>
 </body>
 </html>
