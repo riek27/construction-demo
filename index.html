@@ -619,29 +619,15 @@
                 </div>
                 
                 <!-- Newsletter -->
-<div>
-    <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
-    <p class="mb-4">Subscribe to our newsletter to get updates on our latest projects and promotions.</p>
-    <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2">
-        <input type="email" id="newsletterEmail" placeholder="Your email address" class="flex-grow px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary" required>
-        <button type="submit" class="bg-secondary hover:bg-secondary-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors">Subscribe</button>
-    </form>
-    <!-- Thank-you message -->
-    <p id="newsletterThankYou" class="mt-2 text-green-600 font-semibold hidden">Thank you for subscribing!</p>
-</div>
-
-<script>
-    const newsletterForm = document.getElementById('newsletterForm');
-    const thankYouMessage = document.getElementById('newsletterThankYou');
-
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent form submission
-        // Optionally, you can handle actual submission here via API
-        thankYouMessage.classList.remove('hidden'); // Show thank-you message
-        newsletterForm.reset(); // Reset input field
-    });
-</script>
-
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+                    <p class="mb-4">Subscribe to our newsletter to get updates on our latest projects and promotions.</p>
+                    <form class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary">
+                        <button type="submit" class="bg-secondary hover:bg-secondary-hover text-white font-semibold py-2 px-4 rounded-lg transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
             
             <!-- Copyright -->
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
